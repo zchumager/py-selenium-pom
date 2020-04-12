@@ -1,0 +1,17 @@
+echo "Python Version\n"
+python3 --version
+
+
+echo " Is pip install run? ${RUN_PIP_INSTALL_R}"
+
+# Define RUN_PIP_INSTALL_R as boolean parameter
+if ["$RUN_PIP_INSTALL_R" = "true"];then
+	echo "Installing python requirements\n"
+	pip3 install -r requirements.txt
+fi
+
+echo "Pytest Version\n"
+pytest --version
+
+echo "Running test_search on pytest \n"
+pytest test_cases/test_search.py
